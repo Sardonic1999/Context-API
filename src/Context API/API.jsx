@@ -1,15 +1,14 @@
 import React from "react";
 import MovieList from "./MovieList";
 import Navbar from "./Navbar";
-import { KinoProvider } from "./Context";
+import Add from "./Add";
 
 function API() {
   return (
     <div>
-      <KinoProvider>
-        <Navbar />
-        <MovieList />
-      </KinoProvider>
+      <Navbar />
+      <Add />
+      <MovieList />
     </div>
   );
 }

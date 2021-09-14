@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import "./Style.css";
 import API from "./Context API/API";
+import Icons from "./Styled_API/Icon";
+import Mode from "./Styled_API/Context2";
 
 export default class Root extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isLog: false,
-      isActive: "API",
+      isActive: "Icon",
     };
   }
   render() {
@@ -25,10 +27,10 @@ export default class Root extends Component {
             API
           </div>
           <div
-            onClick={() => change("Container")}
-            className={this.state.isActive === "Container" ? "tab" : "item"}
+            onClick={() => change("Icon")}
+            className={this.state.isActive === "Icon" ? "tab" : "item"}
           >
-            Container
+            Icon
           </div>
           <div
             onClick={() => change("SC")}
@@ -51,7 +53,11 @@ export default class Root extends Component {
         </div>
         {/* <h3>{this.state.isActive}</h3> */}
         {this.state.isActive === "API" && <API />}
-        {this.state.isActive === "Container"}
+        {this.state.isActive === "Icon" && (
+          <Mode>
+            <Icons />
+          </Mode>
+        )}
         {this.state.isActive === "SC"}
         {this.state.isActive === "Hook"}
         {this.state.isActive === "None"}
