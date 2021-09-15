@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useContext } from "../ContextCounter/CounterContext";
+import { CounterContext } from "../ContextCounter/CounterContext";
 
 function CompB() {
   const { increaseCount } = useContext(CounterContext);
