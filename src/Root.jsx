@@ -3,13 +3,14 @@ import "./Style.css";
 import API from "./Context API/API";
 import Icons from "./Styled_API/Icon";
 import Mode from "./Styled_API/Context2";
+import Contex_Hook from "./Context_Hook/Contex_Hook";
 
 export default class Root extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isLog: false,
-      isActive: "Icon",
+      isActive: "Contex_Hook",
     };
   }
   render() {
@@ -33,10 +34,10 @@ export default class Root extends Component {
             Icon
           </div>
           <div
-            onClick={() => change("SC")}
-            className={this.state.isActive === "SC" ? "tab" : "item"}
+            onClick={() => change("Contex_Hook")}
+            className={this.state.isActive === "Contex_Hook" ? "tab" : "item"}
           >
-            SC
+            Contex_Hook
           </div>
           <div
             onClick={() => change("Hook")}
@@ -58,7 +59,7 @@ export default class Root extends Component {
             <Icons />
           </Mode>
         )}
-        {this.state.isActive === "SC"}
+        {this.state.isActive === "Contex_Hook" && <Contex_Hook />}
         {this.state.isActive === "Hook"}
         {this.state.isActive === "None"}
       </div>
