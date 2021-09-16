@@ -4,13 +4,15 @@ import API from "./Context API/API";
 import Icons from "./Styled_API/Icon";
 import Mode from "./Styled_API/Context2";
 import Contex_Hook from "./Context_Hook/Contex_Hook";
+import Main_Kino from "./Kino/Main_Kino";
+import Store from "./Kino/Store";
 
 export default class Root extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isLog: false,
-      isActive: "Contex_Hook",
+      isActive: "Main_Kino",
     };
   }
   render() {
@@ -40,10 +42,10 @@ export default class Root extends Component {
             Contex_Hook
           </div>
           <div
-            onClick={() => change("Hook")}
-            className={this.state.isActive === "Hook" ? "tab" : "item"}
+            onClick={() => change("Main_Kino")}
+            className={this.state.isActive === "Main_Kino" ? "tab" : "item"}
           >
-            Hook
+            Main_Kino
           </div>
           <div
             onClick={() => change("None")}
@@ -60,7 +62,11 @@ export default class Root extends Component {
           </Mode>
         )}
         {this.state.isActive === "Contex_Hook" && <Contex_Hook />}
-        {this.state.isActive === "Hook"}
+        {this.state.isActive === "Main_Kino" && (
+          <Store>
+            <Main_Kino />
+          </Store>
+        )}
         {this.state.isActive === "None"}
       </div>
     );
